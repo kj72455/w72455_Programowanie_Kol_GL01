@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let filmy = [
+            {
+                tytul: "Harry Potter",
+                rokPremiery: 2025,
+                imieRezysera: "Chris",
+                nazwiskoRezysera: "Kowalski",
+                pelneImieRezysera: function () {
+                    return this.imieRezysera + " " + this.nazwiskoRezysera;
+                }
+            },
+            {
+                tytul: "Inter",
+                rokPremiery: 2014,
+                imieRezysera: "Internazionale",
+                nazwiskoRezysera: "Nol",
+                pelneImieRezysera: function () {
+                    return this.imieRezysera + " " + this.nazwiskoRezysera;
+                }
+            },
+            {
+                tytul: "Gladiator",
+                rokPremiery: 2020,
+                imieRezysera: "Roman",
+                nazwiskoRezysera: "Trawa",
+                pelneImieRezysera: function () {
+                    return this.imieRezysera + " " + this.nazwiskoRezysera;
+                }
+            },
+            {
+                tytul: "Marvel",
+                rokPremiery: 1929,
+                imieRezysera: "Lucjan",
+                nazwiskoRezysera: "Nela",
+                pelneImieRezysera: function () {
+                    return this.imieRezysera + " " + this.nazwiskoRezysera;
+                }
+            }
+        ];
+
+
+        function wypiszFilmyZRoku(rok) {
+            for (let film of filmy) {
+                if (film.rokPremiery === rok) {
+                    console.log(`Tytuł: ${film.tytul}, Reżyser: ${film.pelneImieRezysera()}`);
+                }
+            }
+        }
+
+
+        wypiszFilmyZRoku(2010);
+    </script>
+</body>
+
+</html>
