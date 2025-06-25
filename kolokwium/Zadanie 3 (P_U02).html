@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function validateForm() {
+
+            var imie = document.getElementById("imie=").value;
+            if (imie == "") {
+                alert("Imię jest wymagane.");
+                return false;
+            }
+
+            var nazwisko = document.getElementById("nazwisko=").value;
+            if (nazwisko == "") {
+                alert("Nazwisko jest wymagane.");
+                return false;
+            }
+
+
+            var email = document.getElementById("email").value;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email == "") {
+                alert("Email jest wymagany.");
+                return false;
+            } else if (!emailPattern.test(email)) {
+                alert("Proszę podać poprawny adres email.");
+                return false;
+            }
+
+
+            var dyscyplina = document.getElementById("dyscyplina").value;
+            if (dyscyplina == "") {
+                alert("Wybór dyscypliny sportowej jest wymagany.");
+                return false;
+            }
+
+            alert("Formularz został poprawnie wysłany!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <label for="imie">Imię:</label>
+        <input type="text" id="imie" name="imie" required>
+        <br><br>
+        <label for="nazwisko">Nazwisko:</label>
+        <input type="text" id="nazwisko" name="nazwisko" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="dyscyplina">Dyscyplina sportowa:</label>
+        <select id="dyscyplina" name="dyscyplina" required>
+            <option value="">Wybierz...</option>
+            <option value="bieganie">Bieganie</option>
+            <option value="plywanie">Pływanie</option>
+            <option value="tenis">Tenis</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Zarejestruj się</button>
+    </form>
+</body>
+
+</html>
